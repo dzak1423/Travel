@@ -3,83 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Travel.css">
-        <!-- boostrap -->
-        <link rel="stylesheet" 
-        href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
-        crossorigin="anonymous">
-    
-    
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-        rel="stylesheet" 
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
-        crossorigin="anonymous">
-    
-        <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-    
-    
-        <!-- font -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-        
-        <!-- font awesome -->
-        <link rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
-        crossorigin="anonymous" 
-        referrerpolicy="no-referrer" />
-    
-        <!-- icon -->
-        <link rel="shortcut icon" href="assets/icon/nm.png"   
-        type="image/x-icon" >
-    
-        <link rel="stylesheet" href="Dist/css/style.css">
-    <title>Travel</title>
-
+    <!-- Google Font: Poppins (Kept as requested) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Note: Removed conflicting Bootstrap, local CSS, and Font Awesome links to keep the Tailwind structure clean. -->
+    <title>Sleek Responsive Navbar</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use the 'Poppins' font and custom colors -->
+    <link rel="stylesheet" href="Dist/css/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // Switched to Poppins since you explicitly added the link
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        // User's requested color 0B1AE9
+                        'primary-blue': '#0B1AE9', 
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Ensures smooth height transition for the mobile menu */
+        .collapse-menu {
+            transition: max-height 0.3s ease-in-out;
+            overflow: hidden;
+            max-height: 0;
+        }
+        .collapse-menu.open {
+            /* Large enough height to show all content */
+            max-height: 500px;
+        }
+    </style>
 </head>
-<body>
-<!-- navbar -->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-            <div class="container">
-              <a class="navbar-brand fw-bold fs-5" href="Asset/icons/visi.png"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-          
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                  <li class="nav-item active">
-                    <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link mx-2" href="#Hero">Hero</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link mx-2" href="#Services">Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link mx-2" href="About">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link mx-2" href="#Contact">Contact</a>
-                  </li> 
-                    </div>
-                </ul>
-          </nav>
-<!-- navbar -->
+<body class="bg-gray-100 font-sans p-4">
+
+<nav class="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl p-4 lg:py-0">
+    <div class="flex justify-between items-center h-16">
+      <img src="Asset/icons/visi.png" width="20%">        
+        <!-- Left side (Placeholder for the logo/text which user asked to remove) -->
+        <div class="text-xl font-bold text-gray-800">
+            <!-- User requested to remove the Landio logo/text. This space remains empty for balanced layout. -->
+        </div>
+        <!-- Menu links (Desktop View) -->
+        <div class="hidden lg:flex lg:space-x-8 items-center text-sm font-medium">
+            <a href="#Home" class="text-primary-blue hover:text-blue-700 transition duration-150 py-4 border-b-2 border-primary-blue">Home</a>
+            <a href="#About" class="text-gray-600 hover:text-gray-900 transition duration-150 py-4">About</a>
+            <a href="#Services" class="text-gray-600 hover:text-gray-900 transition duration-150 py-4">Services</a>
+            <a href="#Contact" class="text-gray-600 hover:text-gray-900 transition duration-150 py-4">Contact</a>
+        </div>
+        <!-- Right side (CTA button and Mobile Menu Button) -->
+        <div class="flex items-center space-x-4">
+            <!-- CTA Button - Smaller font (text-sm font-medium) and custom background color (#0B1AE9) -->
+            <button class="bg-primary-blue hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded-xl shadow-lg shadow-blue-300/50 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                Get Started
+            </button>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="menu-toggle" class="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-150" aria-label="Toggle Menu">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu (Collapsible) -->
+    <div id="mobile-menu" class="collapse-menu lg:hidden">
+        <div class="pt-2 pb-3 space-y-1 border-t border-gray-100">
+            <a href="#Home" class="block px-3 py-2 text-base font-medium text-primary-blue bg-blue-50/50 rounded-lg">Home</a>
+            <a href="#About" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg">About</a>
+            <a href="#Services" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg">Services</a>
+            
+            <!-- Dropdown items moved flat for simplicity in mobile -->
+            <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg ml-4">Dropdown Item 1</a>
+            <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg ml-4">Dropdown Item 2</a>
+            <a href="#Contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg">Contact</a>
+        </div>
+    </div>
+</nav>
 <!-- Home -->
 <div class="Home" id="Home">
-<br>
-<br><br><br><br><br><br>
+  <div>
+    <h2 class="Test">Transforming ideassss<br>
+    digital reality</h2> <br>
+    
+  </div>
 </div>
 <!-- Home -->
 <!-- hero -->
-<div class="hero" id="Hero">
-
-</div> 
+<div class="hero" id="Hero"></div> 
 <!-- hero -->
 <!-- Services -->
 <div class="Services" id="Services"></div>

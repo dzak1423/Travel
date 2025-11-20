@@ -2,6 +2,10 @@
     font-family: "poppins",sans-serif;
 }
 
-.Home {
-    background-color: black;
+.Test {
+    margin: auto;
+    margin-top: 170px;
+    font-size: 55px;
+    text-align: center;
+    font-weight: 700px;
 }
