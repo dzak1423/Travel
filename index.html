@@ -40,69 +40,76 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 font-sans p-4">
-
-<nav class="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl p-4 lg:py-0">
-    <div class="flex justify-between items-center h-16">
-      <img src="Asset/icons/visi.png" width="20%">        
-        <!-- Left side (Placeholder for the logo/text which user asked to remove) -->
-        <div class="text-xl font-bold text-gray-800">
-            <!-- User requested to remove the Landio logo/text. This space remains empty for balanced layout. -->
-        </div>
-        <!-- Menu links (Desktop View) -->
-        <div class="hidden lg:flex lg:space-x-8 items-center text-sm font-medium">
-            <a href="#Home" class="text-primary-blue hover:text-blue-700 transition duration-150 py-4 border-b-2 border-primary-blue">Home</a>
-            <a href="#About" class="text-gray-600 hover:text-gray-900 transition duration-150 py-4">About</a>
-            <a href="#Services" class="text-gray-600 hover:text-gray-900 transition duration-150 py-4">Services</a>
-            <a href="#Contact" class="text-gray-600 hover:text-gray-900 transition duration-150 py-4">Contact</a>
-        </div>
-        <!-- Right side (CTA button and Mobile Menu Button) -->
-        <div class="flex items-center space-x-4">
-            <!-- CTA Button - Smaller font (text-sm font-medium) and custom background color (#0B1AE9) -->
-            <button class="bg-primary-blue hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded-xl shadow-lg shadow-blue-300/50 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
-                Get Started
-            </button>
-            <!-- Mobile Menu Button (Hamburger) -->
-            <button id="menu-toggle" class="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-150" aria-label="Toggle Menu">
-                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-        </div>
-    </div>
-    <!-- Mobile Menu (Collapsible) -->
-    <div id="mobile-menu" class="collapse-menu lg:hidden">
-        <div class="pt-2 pb-3 space-y-1 border-t border-gray-100">
-            <a href="#Home" class="block px-3 py-2 text-base font-medium text-primary-blue bg-blue-50/50 rounded-lg">Home</a>
-            <a href="#About" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg">About</a>
-            <a href="#Services" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg">Services</a>
+<body class="bg-gray-100 p-4">
+    <nav class="fixed top-0 left-0 right-0 z-50 p-4"> 
+        <div class="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl lg:py-0">
             
-            <!-- Dropdown items moved flat for simplicity in mobile -->
-            <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg ml-4">Dropdown Item 1</a>
-            <a href="#" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg ml-4">Dropdown Item 2</a>
-            <a href="#Contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg">Contact</a>
+            <div class="flex justify-between items-center h-16 px-4"> 
+                <img src="Asset/icons/visi.png" width="20%">
+                
+                <div class="text-xl font-bold text-gray-800">
+                    </div>
+                
+                <div class="hidden lg:flex lg:space-x-8 items-center text-sm font-medium">
+                    <a href="#Home" class="text-primary-blue hover:text-blue-700 transition duration-150 py-4 border-b-2 border-primary-blue">Home</a>
+                    <a href="#About" class="text-gray-600 hover:text-gray-900 transition duration-150 py-4">About</a>
+                    <a href="#Services" class="text-gray-600 hover:text-gray-900 transition duration-150 py-4">Services</a>
+                    <a href="#Contact" class="text-gray-600 hover:text-gray-900 transition duration-150 py-4">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="bg-primary-blue hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded-xl shadow-lg shadow-blue-300/50 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                        Get Started
+                    </button>
+                    <button id="menu-toggle" class="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-150" aria-label="Toggle Menu">
+                        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="mobile-menu" class="collapse-menu">
+                <div class="pt-2 pb-3 space-y-1 border-t border-gray-100 px-4">
+                    <a href="#Home" class="block px-3 py-2 text-base font-medium text-primary-blue bg-blue-50/50 rounded-lg">Home</a>
+                    <a href="#About" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg">About</a>
+                    <a href="#Services" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg">Services</a>
+                    <a href="#Contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!-- Home -->
+<!-- <div class="Home" id="Home">
+  <div>
+    <h2 class="Test">Transforming Ideas Into<br>
+    Digital Reality</h2>
+    <div><p class="container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis non ipsa quos deleniti, velit nihil molestias? Amet eaque quisquam praesentium earum eum nam id, adipisci similique exercitationem possimus dolore molestias fuga facere blanditiis corrupti inventore sed animi accusamus, quidem quis?</p></div>
+  </div>
+</div> -->
+<div class="home">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="" id="Test">Lorem ipsum dolor sit amet consectetur.</h1>
+            </div>
         </div>
     </div>
-</nav>
-<!-- Home -->
-<div class="Home" id="Home">
-  <div>
-    <h2 class="Test">Transforming ideassss<br>
-    digital reality</h2> <br>
-    
-  </div>
 </div>
 <!-- Home -->
-<!-- hero -->
-<div class="hero" id="Hero"></div> 
-<!-- hero -->
 <!-- Services -->
-<div class="Services" id="Services"></div>
+<div class="Services" id="Services">
+
+</div>
 <!-- Services -->
 <!-- About -->
-<div class="About" id="About"></div>
+<div class="About" id="About">
+
+</div>
 <!-- About -->
 <!-- Hubungi -->
-<div class="Contact" id="Contact"></div>
+<div class="Contact" id="Contact">
+
+</div>
 <!-- Hubungi -->
 </body>
 </html>

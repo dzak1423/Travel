@@ -2,10 +2,29 @@
     font-family: "poppins",sans-serif;
 }
 
-.Test {
+#Test {
     margin: auto;
     margin-top: 170px;
     font-size: 55px;
     text-align: center;
     font-weight: 700px;
+    margin-left: 350px;
+}
+
+
+.Lorem {
+    text-align: center;
+
+}
+
+.container {
+    align-items: center;
+    text-align: center;
+}
+
+@media screen and (max-width:1500px) and  (min-width:350px) {
+    #Test {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 }
