@@ -3,64 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Font: Poppins (Kept as requested) -->
+    <title>Compro</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Note: Removed conflicting Bootstrap, local CSS, and Font Awesome links to keep the Tailwind structure clean. -->
-    <title>Sleek Responsive Navbar</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configure Tailwind to use the 'Poppins' font and custom colors -->
     <link rel="stylesheet" href="Dist/css/style.css">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        // Switched to Poppins since you explicitly added the link
+                        // Ensure Poppins is the main font
                         sans: ['Poppins', 'sans-serif'],
                     },
                     colors: {
                         // User's requested color 0B1AE9
                         'primary-blue': '#0B1AE9', 
+                        'primary-white': '#FFFFFF',
                     }
                 }
             }
         }
     </script>
-    <style>
-        /* Ensures smooth height transition for the mobile menu */
-        .collapse-menu {
-            transition: max-height 0.3s ease-in-out;
-            overflow: hidden;
-            max-height: 0;
-        }
-        .collapse-menu.open {
-            /* Large enough height to show all content */
-            max-height: 500px;
-        }
-    </style>
+
 </head>
-<body class="bg-gray-100 p-4">
+<body class="bg-gray-100 pt-20">
     <nav class="fixed top-0 left-0 right-0 z-50 p-4"> 
-        <div class="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl lg:py-0">
-            
+        <div class="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl lg:py-0">     
             <div class="flex justify-between items-center h-16 px-4"> 
-                <img src="Asset/icons/visi.png" width="20%">
-                
-                <div class="text-xl font-bold text-gray-800">
-                    </div>
-                
+                <img src="Asset/icons/visi.png" width="15%" class="h-8 w-auto"> 
+
+                <!-- Desktop Links -->
                 <div class="hidden lg:flex lg:space-x-8 items-center text-sm font-medium">
                     <a href="#Home" class="text-primary-blue hover:text-blue-700 transition duration-150 py-4 border-b-2 border-primary-blue">Home</a>
                     <a href="#About" class="text-gray-600 hover:text-gray-900 transition duration-150 py-4">About</a>
                     <a href="#Services" class="text-gray-600 hover:text-gray-900 transition duration-150 py-4">Services</a>
                     <a href="#Contact" class="text-gray-600 hover:text-gray-900 transition duration-150 py-4">Contact</a>
-                </div>
-                
+                </div>  
+                <!-- Button -->
                 <div class="flex items-center space-x-4">
-                    <button class="bg-primary-blue hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded-xl shadow-lg shadow-blue-300/50 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                    <button class="bg-primary-blue hover:bg-blue-700 text-white text-sm font-medium py-2 px-5 rounded-xl shadow-lg shadow-blue-300/50 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98] hidden lg:block">
                         Get Started
                     </button>
+                    <!-- Mobile Toggler Button -->
                     <button id="menu-toggle" class="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-150" aria-label="Toggle Menu">
                         <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                         <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -68,7 +53,8 @@
                 </div>
             </div>
             
-            <div id="mobile-menu" class="collapse-menu">
+            <!-- Mobile Menu Content -->
+            <div id="mobile-menu" class="collapse-menu lg:hidden">
                 <div class="pt-2 pb-3 space-y-1 border-t border-gray-100 px-4">
                     <a href="#Home" class="block px-3 py-2 text-base font-medium text-primary-blue bg-blue-50/50 rounded-lg">Home</a>
                     <a href="#About" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 rounded-lg">About</a>
@@ -79,37 +65,35 @@
         </div>
     </nav>
 <!-- Home -->
-<!-- <div class="Home" id="Home">
-  <div>
-    <h2 class="Test">Transforming Ideas Into<br>
-    Digital Reality</h2>
-    <div><p class="container">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis non ipsa quos deleniti, velit nihil molestias? Amet eaque quisquam praesentium earum eum nam id, adipisci similique exercitationem possimus dolore molestias fuga facere blanditiis corrupti inventore sed animi accusamus, quidem quis?</p></div>
-  </div>
-</div> -->
-<div class="home">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1 class="" id="Test">Lorem ipsum dolor sit amet consectetur.</h1>
+<div class="home" id="Home">
+    <div class="max-w-4xl mx-auto flex flex-col items-center justify-center text-center px-4">
+            <h2 id="Test" class="text-gray-900">
+                Transforming Ideas Into <br> Digital Reality
+            </h2>   
+            <p class="Lorem mt-8 text-lg text-gray-600 max-w-2xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod <br> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <br> veniam, quis nostrud exercitation.
+            </p> 
+            <div class="mt-8 space-x-4 flex justify-center">
+                <button href="home" class="bg-primary-blue hover:bg-blue-700 text-white text-base font-medium py-4 px-7 rounded-xl shadow-lg shadow-blue-300/50 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                    Get Started Today
+                </button> 
+                <button class="bg-primary-white text-black border-2 border-black text-base font-medium py-4 px-7 rounded-xl shadow-lg transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                    View Our Work
+                </button>
             </div>
-        </div>
     </div>
 </div>
-<!-- Home -->
 <!-- Services -->
 <div class="Services" id="Services">
 
 </div>
-<!-- Services -->
 <!-- About -->
 <div class="About" id="About">
 
 </div>
-<!-- About -->
-<!-- Hubungi -->
+<!-- Contact -->
 <div class="Contact" id="Contact">
 
 </div>
-<!-- Hubungi -->
 </body>
 </html>

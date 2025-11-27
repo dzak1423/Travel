@@ -20,28 +20,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-menuToggle.addEventListener('click', () => {
-    const isMenuOpen = mobileMenu.classList.toggle('open');
-    
-    // Toggle icons
-    if (isMenuOpen) {
-        openIcon.classList.add('hidden');
-        closeIcon.classList.remove('hidden');
-        menuToggle.setAttribute('aria-expanded', 'true');
-    } else {
-        openIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        menuToggle.setAttribute('aria-expanded', 'false');
-    }
-});
 
-// Hide menu when clicking outside on mobile (optional, but good UX)
-document.addEventListener('click', (event) => {
-    const isClickInsideNav = menuToggle.closest('nav').contains(event.target);
-    if (!isClickInsideNav && mobileMenu.classList.contains('open') && window.innerWidth < 1024) {
-        mobileMenu.classList.remove('open');
-        openIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        menuToggle.setAttribute('aria-expanded', 'false');
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            // Toggle visibility of the menu content
+            mobileMenu.classList.toggle('open');
+            
+            // Toggle visibility of the icons
+            menuIconOpen.classList.toggle('hidden');
+            menuIconClose.classList.toggle('hidden');
+        });
     }
 });
